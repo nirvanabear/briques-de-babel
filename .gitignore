@@ -172,3 +172,21 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+
+###################################
+
+#FFmpeg library
+ffmpeg2/*
+
+# Audio files
+audio/ffmpeg_process/*
+audio/ffmpeg_source/*
+audio/ffmpeg_product/*
+reference/
+
+# Notes
+Notes/*
+exec/Audio_Course.ipynb
+exec/Audio_Course_v2.ipynb
+exec/LID_filter_splice.py

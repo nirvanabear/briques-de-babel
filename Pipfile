@@ -1,0 +1,25 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+transformers = "*"
+torch = "*"
+torchvision = "*"
+torchaudio = "*"
+numpy = "==1.26.4"
+datasets = "*"
+librosa = "*"
+matplotlib = "*"
+ipywidgets = "*"
+gradio = "*"
+python-dotenv = "*"
+ffmpeg-python = "*"
+huggingface-hub = {extras = ["cli"], version = "*"}
+tqdm = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.12"
