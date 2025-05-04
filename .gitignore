@@ -183,10 +183,19 @@ ffmpeg2/*
 audio/ffmpeg_process/*
 audio/ffmpeg_source/*
 audio/ffmpeg_product/*
+audio/ffmpeg_output/*
 reference/
+output_files/
+audio/clips
 
 # Notes
 Notes/*
 exec/Audio_Course.ipynb
 exec/Audio_Course_v2.ipynb
 exec/LID_filter_splice.py
+
+# HF Models
+models/mms-lid-256/*
+
+# Paperspace
+paperspace_deployment

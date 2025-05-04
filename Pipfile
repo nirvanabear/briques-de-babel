@@ -14,10 +14,10 @@ librosa = "*"
 matplotlib = "*"
 ipywidgets = "*"
 gradio = "*"
-python-dotenv = "*"
 ffmpeg-python = "*"
-huggingface-hub = {extras = ["cli"], version = "*"}
 tqdm = "*"
+python-dotenv = "*"
+huggingface-hub = {extras = ["cli"], version = "*"}
 
 [dev-packages]
 

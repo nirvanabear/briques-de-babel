@@ -1,0 +1,26 @@
+#!/bin/bash
+# Author: George Ashworth
+# 5/2/25
+# Removes English audio clips from French tutorial
+# Use script from the mac dock by:
+    # Change suffix to .app
+    # Drag to dock
+    # Remove suffix
+
+SCRIPT_LOC=$(dirname $0)
+
+cd ${SCRIPT_LOC}
+
+cd ..
+
+pwd
+
+pipenv run python3 exec/lid_splicer_v3.py
+
+exit
+
+
+## Possible TODO ##
+# Use applescript to close the Terminal window after completion.
+# Doesn't work so hot right now. Still have to hit enter.
+# osascript -e "tell application \"System Events\" to keystroke \"q\" using command down"
