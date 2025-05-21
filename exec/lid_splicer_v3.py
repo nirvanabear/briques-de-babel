@@ -35,6 +35,23 @@ api = HfApi()
 # ConnectionError: (ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')), '(Request ID: 378f6a49-2887-4f85-b0d1-371c38213a06)') 
 # Maybe just try again?
 
+
+### Delete source file copies ###
+delete_list = [ source_dir + k for k in os.listdir(source_dir) if not k.startswith('.') ]
+for filepath in delete_list:
+    os.remove(filepath)
+
+
+### File picker dialog window then copies files ###
+dialog_list = filedialog.askopenfilenames()
+for file in dialog_list:
+    shutil.copyfile(file, f"{source_dir}{os.path.basename(file)}")
+if len(dialog_list) == 0:
+    raise OSError("File Picker error. Please try again.")
+print("Files to be processed:")
+print(dialog_list)
+
+
 ### Spin up inference endpoint ###
 print("\nSpinning up inference endpoint...")
 print("https://endpoints.huggingface.co/nirvanabear/endpoints/mms-lid-256-uxu")
@@ -47,22 +64,6 @@ api_url = endpoint.url
 end_time1 = time.time()
 print(f"Endpoint ready: {(end_time1 - start_time1)//60}m {round((end_time1 - start_time1)%60, 3)}s")
 print(api_url)
-
-
-### Delete source file copies ###
-delete_list = [ source_dir + k for k in os.listdir(source_dir) if not k.startswith('.') ]
-for filepath in delete_list:
-    os.remove(filepath)
-
-
-### File picker dialog then copies files ###
-dialog_list = filedialog.askopenfilenames()
-for file in dialog_list:
-    shutil.copyfile(file, f"{source_dir}{os.path.basename(file)}")
-if len(dialog_list) == 0:
-    raise OSError("File Picker error. Please try again.")
-print("Files to be processed:")
-print(dialog_list)
 
 ## TODO ##
 # Add timeout limits to all the subprocess calls.
